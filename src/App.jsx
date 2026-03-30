@@ -1,11 +1,11 @@
-import { useState } from 'react'
-import NewGame from './components/NewGame'
+import StartButton from "./components/StartButton";
 import './App.css'
 
 function App() {
+
   return (
     <>
-      <NewGame />
+      <StartButton />
     </>
   )
 }

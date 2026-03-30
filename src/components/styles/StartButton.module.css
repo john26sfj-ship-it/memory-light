@@ -1,0 +1,14 @@
+.button {
+  background-color: lightgreen;
+  font-size: 2rem;
+  margin: 2rem 0 2rem 0;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.cardContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
