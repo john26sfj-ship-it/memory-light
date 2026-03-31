@@ -4,11 +4,3 @@
   align-items: stretch;
   gap: 0.5rem;
 }
-
-.card {
-  border: 1px solid black;
-  border-radius: 0.5rem;
-  width: fit-content;
-  height: fit-content;
-  padding: 2rem 4rem;
-}

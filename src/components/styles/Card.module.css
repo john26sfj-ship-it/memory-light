@@ -1,0 +1,18 @@
+.cardFront {
+  background-color: aquamarine;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  width: fit-content;
+  height: fit-content;
+  padding: 2rem 4rem;
+  font-size: 3rem;
+}
+.cardBack {
+  background-color: blueviolet;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  width: fit-content;
+  height: fit-content;
+  padding: 2rem 4rem;
+  font-size: 3rem;
+}
