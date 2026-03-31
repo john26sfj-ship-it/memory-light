@@ -10,10 +10,12 @@ export default function StartButton() {
 
     const [clicked, setClicked] = useState(false);
     const [shuffledDeck, setShuffledDeck] = useState([]);
+    const [resetTrigger, setResetTrigger] = useState(0);
 
     const handleClick = () => {
         setShuffledDeck(ShuffleDeck(deckCopy));
         setClicked(true);
+        setResetTrigger(prev => prev + 1);
     };
     
     return (
@@ -22,7 +24,7 @@ export default function StartButton() {
                 Start new game
             </button>
             <div className={styles.cardContainer}>
-                {clicked && <BoardSetup shuffledDeck={shuffledDeck} />}
+                {clicked && <BoardSetup shuffledDeck={shuffledDeck} resetTrigger={resetTrigger} />}
             </div>
         </>
     );
