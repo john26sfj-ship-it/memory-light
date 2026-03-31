@@ -25,7 +25,7 @@ export default function BoardSetup({shuffledDeck, resetTrigger}) {
         setCount(newCount)
     }
 
-    const resetAllFlipped = () => setFlipped(new Array(shuffledDeck.length).fill(false));
+    // const resetAllFlipped = () => setFlipped(new Array(shuffledDeck.length).fill(false));
 
     useEffect(() => {
         setCard1(0);
@@ -40,7 +40,7 @@ export default function BoardSetup({shuffledDeck, resetTrigger}) {
     }, [resetTrigger, shuffledDeck.length]);
 
     useEffect(()=> {
-        if (card1 !== 0 || card2 !== 0) {
+        if (card1 || card2) {
             
             if (card1 === card2 && count === 2) {
                 setNumTurns(numTurns + 1);
