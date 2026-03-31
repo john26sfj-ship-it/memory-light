@@ -2,11 +2,11 @@ import { useState } from "react";
 import styles from "./styles/Card.module.css";
 
 
-export default function Card({eachCard, index, currentCard1, onCard1Change, currentCard2, onCard2Change, currentCount, onCountChange, isFlipped, onFlipChange, isFound}) {
+export default function Card({eachCard, index, currentCard1, onCard1Change, currentCard2, onCard2Change, currentCount, onCountChange, isFlipped, onFlipChange, isFound, isWaiting}) {
     const [cardClicked, setCardClicked] = useState(false);
 
     const whenCardClicked = () => {
-        if (isFound) return;
+        if (isFound || isWaiting) return;
 
         setCardClicked(prevState => !prevState);
         onFlipChange(true);

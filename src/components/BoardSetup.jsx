@@ -12,6 +12,7 @@ export default function BoardSetup({shuffledDeck, resetTrigger}) {
     const [found, setFound] = useState([])
     const [numTurns, setNumTurns] = useState(0)
     const [win, setWin] = useState(false)
+    const [isWaiting, setIsWaiting] = useState(false)
 
     const handleCard1 = (newCard1, index) => {
         setCard1(newCard1)
@@ -37,6 +38,7 @@ export default function BoardSetup({shuffledDeck, resetTrigger}) {
         setFound([]);
         setNumTurns(0);
         setWin(false);
+        setIsWaiting(false);
     }, [resetTrigger, shuffledDeck.length]);
 
     useEffect(()=> {
@@ -49,15 +51,25 @@ export default function BoardSetup({shuffledDeck, resetTrigger}) {
                 if (newFound.length === shuffledDeck.length) {
                     setWin(true);
                 }
+                setCard1(0);
+                setCard2(0);
                 setCount(0);                
             }
             else if(card1 !== card2 && count === 2) {
+                setIsWaiting(true);
                 setNumTurns(numTurns + 1);
-                const newFlipped = [...flipped];
-                newFlipped[card1Index] = false;
-                newFlipped[card2Index] = false;
-                setTimeout(() => setFlipped(newFlipped), 500);
-                setCount(0);
+                setTimeout(() => {
+                    setFlipped(prev => {
+                        const newFlipped = [...prev];
+                        newFlipped[card1Index] = false;
+                        newFlipped[card2Index] = false;
+                        return newFlipped;
+                    });
+                    setCard1(0);
+                    setCard2(0);
+                    setCount(0);
+                    setIsWaiting(false);
+                }, 500);
             }
         }
     },[card1,card2])
@@ -75,7 +87,7 @@ export default function BoardSetup({shuffledDeck, resetTrigger}) {
                     currentCard2={card2} onCard2Change={handleCard2}
                     currentCount={count} onCountChange={handleCount}
                     isFlipped={flipped[index]} onFlipChange={(newVal) => { const newFlipped = [...flipped]; newFlipped[index] = newVal; setFlipped(newFlipped); }}
-                    isFound={found.includes(index)}/>
+                    isFound={found.includes(index)} isWaiting={isWaiting}/>
                 ))}
                 <h2>Turns used: {numTurns}</h2>
             </div>
