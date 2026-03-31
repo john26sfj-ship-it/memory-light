@@ -83,8 +83,8 @@ export default function BoardSetup({shuffledDeck, resetTrigger}) {
             <div className={styles.board}>
                 {shuffledDeck.map((eachCard, index) => (
                     <Card key={index} eachCard={eachCard} index={index}
-                    currentCard1={card1} onCard1Change={handleCard1}
-                    currentCard2={card2} onCard2Change={handleCard2}
+                    onCard1Change={handleCard1}
+                    onCard2Change={handleCard2}
                     currentCount={count} onCountChange={handleCount}
                     isFlipped={flipped[index]} onFlipChange={(newVal) => { const newFlipped = [...flipped]; newFlipped[index] = newVal; setFlipped(newFlipped); }}
                     isFound={found.includes(index)} isWaiting={isWaiting}/>

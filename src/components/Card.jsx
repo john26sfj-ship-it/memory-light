@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./styles/Card.module.css";
 
 
-export default function Card({eachCard, index, currentCard1, onCard1Change, currentCard2, onCard2Change, currentCount, onCountChange, isFlipped, onFlipChange, isFound, isWaiting}) {
+export default function Card({eachCard, index,  onCard1Change,  onCard2Change, currentCount, onCountChange, isFlipped, onFlipChange, isFound, isWaiting}) {
     const [cardClicked, setCardClicked] = useState(false);
 
     const whenCardClicked = () => {
