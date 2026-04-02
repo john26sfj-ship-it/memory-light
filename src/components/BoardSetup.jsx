@@ -89,7 +89,7 @@ export default function BoardSetup({shuffledDeck, resetTrigger}) {
                     isFlipped={flipped[index]} onFlipChange={(newVal) => { const newFlipped = [...flipped]; newFlipped[index] = newVal; setFlipped(newFlipped); }}
                     isFound={found.includes(index)} isWaiting={isWaiting}/>
                 ))}
-                <h2>Turns used: {numTurns}</h2>
+                <h2 className={styles.turns}>Turns used: {numTurns}</h2>
             </div>
         );
     }

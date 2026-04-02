@@ -43,11 +43,17 @@
   backface-visibility: hidden;
 }
 .cardFront {
-  background-color: aquamarine;
+  background: rgba(245, 245, 245, 0.4);
+  backdrop-filter: blur(10px);
+  color: lightgreen;
+  text-shadow: 0 0 1px black;
   transform: rotateY(180deg);
 }
 .cardBack {
-  background-color: blueviolet;
+  background-color: rgba(92, 92, 92, 0.4);
+  backdrop-filter: blur(10px);
+  color: lightgreen;
+  text-shadow: 0 0 1px black;
 }
 .icon {
   font-size: 2rem;

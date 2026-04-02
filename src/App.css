@@ -4,13 +4,16 @@
   box-sizing: border-box;
 }
 
+#root {
+  min-height: 100vh;
+  --body-bg-color: #4f7c91;
+  padding: 0 0.25rem;
+  /* background-color: var(--body-bg-color); */
+}
+
 body {
   text-align: center;
-  background-color: bisque;
-  /* display: flex;
-  justify-content: center; */
+  background-color: var(--body-bg-color);
   margin: 0 auto;
-}
-#root {
-  padding: 0 0.25rem;
+  transition: background-color 4s ease;
 }
