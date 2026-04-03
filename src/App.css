@@ -15,5 +15,6 @@ body {
   text-align: center;
   background-color: var(--body-bg-color);
   margin: 0 auto;
+  -webkit-transition: background-color 4s ease;
   transition: background-color 4s ease;
 }
