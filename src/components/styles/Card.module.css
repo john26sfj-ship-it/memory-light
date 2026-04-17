@@ -50,7 +50,7 @@
   transform: rotateY(180deg);
 }
 .cardBack {
-  background-color: rgba(92, 92, 92, 0.4);
+  background-color: rgba(245, 245, 245, 0.4);
   backdrop-filter: blur(10px);
   color: lightgreen;
   text-shadow: 0 0 1px black;
@@ -58,4 +58,8 @@
 .icon {
   font-size: 2rem;
   margin: 0;
+}
+
+.image {
+  width: 100%;
 }

@@ -1,5 +1,5 @@
 import { useEffect, useState, createContext } from "react";
-import Card from "./Card";
+import Card from "./Card.jsx";
 import styles from "./styles/BoardSetup.module.css";
 
 export default function BoardSetup({shuffledDeck, resetTrigger}) {

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./styles/Card.module.css";
+import archangel from "../images/archangel.png"
 
 
 export default function Card({eachCard, index,  onCard1Change,  onCard2Change, currentCount, onCountChange, isFlipped, onFlipChange, isFound, isWaiting}) {
@@ -30,7 +31,8 @@ export default function Card({eachCard, index,  onCard1Change,  onCard2Change, c
             {eachCard}
           </div>
           <div className={`${styles.cardFace} ${styles.cardBack}`}>
-            <p className={styles.icon}>?</p>
+            {/* <p className={styles.icon}>?</p> */}
+            <img src={archangel} className={styles.image} alt="Drawing of an archangel" />
           </div>
         </div>
       </div>
